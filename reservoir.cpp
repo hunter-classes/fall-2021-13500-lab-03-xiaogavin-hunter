@@ -50,7 +50,7 @@ double get_min_east() {
     std::string date_tsv, eastSt, eastEl, westSt, westEl;
     while(fin >> date_tsv >> eastSt >> eastEl >> westSt >> westEl) {    
         fin.ignore(INT_MAX, '\n'); 
-        
+
         if(minimum_storage > std::stod(eastSt)) { 
             minimum_storage = std::stod(eastSt); 
         }
@@ -61,7 +61,7 @@ double get_min_east() {
 }
 
 double get_max_east() { 
-std::ifstream fin("Current_Reservoir_Levels.tsv");
+    std::ifstream fin("Current_Reservoir_Levels.tsv");
     if(fin.fail()) { 
         std::cerr << "File cannot be opened for reading." << std::endl;
         exit(1); 
@@ -86,4 +86,35 @@ std::ifstream fin("Current_Reservoir_Levels.tsv");
 
     fin.close();
     return maximum_storage; 
+}
+
+std::string compare_basins(std::string date) { 
+    std::ifstream fin("Current_Reservoir_Levels.tsv");
+    if(fin.fail()) { 
+        std::cerr << "File cannot be opened for reading." << std::endl;
+        exit(1); 
+    }
+
+    // ignores first line from TSV file 
+    std::string ignore; 
+    getline(fin, ignore);
+
+    std::string date_tsv, eastSt, eastEl, westSt, westEl;
+    while(fin >> date_tsv >> eastSt >> eastEl >> westSt >> westEl) {
+        fin.ignore(INT_MAX, '\n');
+
+        if(date_tsv.compare(date) == 0) { 
+            fin.close();
+            std::cout << eastEl << " " << westEl << std::endl;
+            if(std::stod(eastEl) < std::stod(westEl)) { 
+                return "West";
+            } else if(std::stod(eastEl) > std::stod(westEl)) { 
+                return "East";
+            } else { 
+                return "Equal"; 
+            }
+        }
+    } 
+
+    return ""; 
 }

@@ -24,6 +24,17 @@ int main() {
     std::cout << "\nTask B:\n";
     std::cout << "The maximum storage in the East is: " << get_max_east() << " billion gallons." << std::endl;
     std::cout << "The minimum storage in the East is: " << get_min_east() << " billion gallons." << std::endl;
-  
+
+    std::cout << "\nTask C:\n";
+    std::cout << "Comparing the elevations on 01/06/2018, the greater elevation is: " 
+              << compare_basins("01/06/2018") << std::endl;
+    std::cout << "Comparing the elevations on 01/11/2018, the greater elevation is: " 
+              << compare_basins("01/11/2018") << std::endl;
+    std::cout << "Comparing the elevations on 08/15/2018, the greater elevation is: " 
+              << compare_basins("08/15/2018") << std::endl;
+    std::cout << "Comparing the elevations on 09/27/2018, the greater elevation is: " 
+              << compare_basins("09/27/2018") << std::endl;
+
+
 return 0;
 }
