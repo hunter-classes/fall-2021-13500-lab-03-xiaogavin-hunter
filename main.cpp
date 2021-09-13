@@ -14,6 +14,7 @@ describe what the program does.
 #include <cstdlib> 
 #include <climits>
 #include "reservoir.h"
+#include "reverseorder.h" 
 
 int main() {
     std::cout << "Task A:\n";
@@ -34,6 +35,12 @@ int main() {
               << compare_basins("08/15/2018") << std::endl;
     std::cout << "Comparing the elevations on 09/27/2018, the greater elevation is: " 
               << compare_basins("09/27/2018") << std::endl;
+
+    std::cout << "\nTask D:\n"; 
+    std::cout << "Reversing order from 05/06/2018 to 05/15/2018: " << std::endl; 
+    reverse_order("05/06/2018", "05/15/2018"); 
+    std::cout << "\nReversing order from 06/29/2018 to 07/04/2018: " << std::endl; 
+    reverse_order("06/29/2018", "07/04/2018"); 
 
 
 return 0;

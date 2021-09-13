@@ -105,7 +105,7 @@ std::string compare_basins(std::string date) {
 
         if(date_tsv.compare(date) == 0) { 
             fin.close();
-            std::cout << eastEl << " " << westEl << std::endl;
+            // std::cout << eastEl << " " << westEl << std::endl;
             if(std::stod(eastEl) < std::stod(westEl)) { 
                 return "West";
             } else if(std::stod(eastEl) > std::stod(westEl)) { 
