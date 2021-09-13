@@ -1,10 +1,10 @@
-* Spring 2021 - Lab 03
+* Fall 2021 - Lab 03
 
-* Last name:
+* Last name: Xiao
 
-* First name:
+* First name: Gavin
 
-* GitHub username:
+* GitHub username: xiaogavin-hunter
 
 * Notes:
 
